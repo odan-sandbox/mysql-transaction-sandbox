@@ -1,0 +1,12 @@
+version: "3"
+
+services:
+  mysql:
+    image: mysql:5.7.12
+    ports:
+      - "53306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: mysql-transaction-sandbox
+      MYSQL_USER: mysql-transaction-sandbox
+      MYSQL_PASSWORD: mysql-transaction-sandbox
+      MYSQL_DATABASE: mysql-transaction-sandbox

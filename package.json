@@ -24,5 +24,10 @@
     "test:build": "yarn build --noEmit",
     "test:jest": "yarn jest",
     "test:lint": "eslint --ext .js,.ts --ignore-path .gitignore ."
+  },
+  "dependencies": {
+    "mysql2": "^2.1.0",
+    "reflect-metadata": "^0.1.13",
+    "typeorm": "^0.2.22"
   }
 }
