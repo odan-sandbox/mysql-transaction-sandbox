@@ -28,6 +28,7 @@
   "dependencies": {
     "mysql2": "^2.1.0",
     "reflect-metadata": "^0.1.13",
-    "typeorm": "^0.2.22"
+    "typeorm": "^0.2.22",
+    "typeorm-transactional-cls-hooked": "^0.1.12"
   }
 }
