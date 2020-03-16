@@ -23,7 +23,7 @@ export function add(x: number, y: number): number {
 }
 
 @Entity()
-class User {
+export class User {
   @PrimaryColumn()
   public id!: number;
 
@@ -61,7 +61,7 @@ async function taskA(connection: Connection): Promise<void> {
   console.log("end taskA");
 }
 
-class Runner {
+export class Runner {
   private readonly userRepository: Repository<User>;
   public constructor() {
     this.userRepository = getRepository<User>(User);
@@ -124,4 +124,6 @@ async function main(): Promise<void> {
   await connection.close();
 }
 
-main();
+if (!module.parent) {
+  main();
+}
