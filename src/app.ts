@@ -99,7 +99,7 @@ async function main(): Promise<void> {
   const connection = await createConnection({
     type: "mysql",
     host: "localhost",
-    port: 53306,
+    port: 63306,
     database: "mysql-transaction-sandbox",
     username: "mysql-transaction-sandbox",
     password: "mysql-transaction-sandbox",
