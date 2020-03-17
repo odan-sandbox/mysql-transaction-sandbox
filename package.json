@@ -16,13 +16,14 @@
     "prettier": "^1.18.2",
     "ts-jest": "^25.0.0",
     "ts-node": "^8.6.2",
+    "typeorm-test-transactions": "^1.10.0",
     "typescript": "^3.7.5"
   },
   "scripts": {
     "build": "tsc -p tsconfig.build.json",
     "test": "run-p test:*",
     "test:build": "yarn build --noEmit",
-    "test:jest": "yarn jest",
+    "test:jest": "yarn jest --detectOpenHandles --forceExit",
     "test:lint": "eslint --ext .js,.ts --ignore-path .gitignore ."
   },
   "dependencies": {

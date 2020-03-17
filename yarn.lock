@@ -4376,7 +4376,14 @@ typedarray-to-buffer@^3.1.5:
   dependencies:
     is-typedarray "^1.0.0"
 
-typeorm-transactional-cls-hooked@^0.1.12:
+typeorm-test-transactions@^1.10.0:
+  version "1.10.0"
+  resolved "https://registry.yarnpkg.com/typeorm-test-transactions/-/typeorm-test-transactions-1.10.0.tgz#2e1cf57b9e27d6885402980e889c493f37386d34"
+  integrity sha512-np8zdD8fJI/Fwv7StqKAPnqu99kMveReWgbExEih83OSIZ5uTEe7sRVtCB4nRCyehbV2IDclw1M4Jla1/KPM2A==
+  dependencies:
+    typeorm-transactional-cls-hooked "^0.1.10"
+
+typeorm-transactional-cls-hooked@^0.1.10, typeorm-transactional-cls-hooked@^0.1.12:
   version "0.1.12"
   resolved "https://registry.yarnpkg.com/typeorm-transactional-cls-hooked/-/typeorm-transactional-cls-hooked-0.1.12.tgz#30f6985655505475922da0bcd88a04ee72073760"
   integrity sha512-kCKYVzmE+re8AbMCUR2hgXYFjhsTUo2L0r2ypo1mU8KY7WG+7S5o2LDhONX3OYJ12V81SOWHHmxGRwU82nYtWg==

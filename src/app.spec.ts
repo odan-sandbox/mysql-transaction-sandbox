@@ -1,5 +1,11 @@
 import { add, Runner, User } from "./app";
 import { createConnection, Repository, getConnection } from "typeorm";
+import {
+  runInTransaction,
+  initialiseTestTransactions
+} from "typeorm-test-transactions";
+
+initialiseTestTransactions();
 
 describe("app", (): void => {
   describe("add", (): void => {
@@ -44,16 +50,14 @@ describe("Runner", (): void => {
       const runner = new Runner();
       await expect(runner["getUser"](1)).rejects.toThrow();
     });
-    it("should be pass", async (): Promise<void> => {
-      const runner = new Runner();
-      await getConnection().transaction(
-        async (entityManager): Promise<void> => {
-          Object.defineProperty(runner["userRepository"], "manager", {
-            value: entityManager
-          });
+    it(
+      "should be pass",
+      runInTransaction(
+        async (): Promise<void> => {
+          const runner = new Runner();
           await expect(runner["getUser"](1)).resolves.toBeDefined();
         }
-      );
-    });
+      )
+    );
   });
 });

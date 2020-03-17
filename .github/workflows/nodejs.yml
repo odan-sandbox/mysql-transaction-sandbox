@@ -24,6 +24,7 @@ jobs:
     - name: npm install, build, and test
       run: |
         yarn install --frozen-lockfile
+        docker-compose up -d
         yarn test
       env:
         CI: true
