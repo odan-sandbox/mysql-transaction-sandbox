@@ -21,11 +21,20 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-    - name: npm install, build, and test
+    - name: yarn install
       run: |
         yarn install --frozen-lockfile
+      env:
+        CI: true
+    - name: setup mysql
+      run: |
+        docker-compose down -v
         docker-compose up -d
         ./bin/wait.sh
+      env:
+        CI: true
+    - name: run tests
+      run: |
         yarn test
       env:
         CI: true
