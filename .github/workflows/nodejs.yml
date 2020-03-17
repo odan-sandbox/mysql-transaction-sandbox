@@ -25,6 +25,7 @@ jobs:
       run: |
         yarn install --frozen-lockfile
         docker-compose up -d
+        ./bin/wait.sh
         yarn test
       env:
         CI: true
